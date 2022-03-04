@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker: # circleci上でのdockerによる実行環境の指定
+      - image: cimg/python:3.10.2 # 自分の実行環境に合わせる cimgのpythonであればpipenvがインストール済み
+    steps:
+      - checkout
+      - run: python --version
+      - run:
+          name: install
+          command: pipenv install # Pipfileを用いてインストールする
+      - run:
+          name: run test
+          command: pipenv run pytest --junitxml=test-reports/junit.xml # pytest実行の際にテスト結果のレポートを作成する
+      - store_test_results: # テスト結果をCircleCIにアップロード
+          path: test-reports
