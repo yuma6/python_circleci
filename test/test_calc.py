@@ -7,4 +7,4 @@ def test_div():
     assert 6 == div(12,2)
 
 def test_plus():
-    assert 2 == plus(1,1) #正しいテスト
+    assert 2 == plus(1,1) # 正しいテスト
