@@ -11,7 +11,7 @@ class class1(BaseHTTPRequestHandler):
         self.send_header("User-Agent","test1")
         self.end_headers()
         # 折角なので計算もさせる
-        html = "<h1>Answer is " + str(mul(6,7)) +  "</h1>"
+        html = "<h1>Answer is " + str(mul(5,5)) +  "</h1>"
         self.wfile.write(html.encode())
 
 ip = '0.0.0.0'
