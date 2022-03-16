@@ -28,9 +28,12 @@ jobs:
           path: test-reports
 workflows:
   version: 2.1
-  test_and_deploy: # workflow名
+  heroku/default: # workflow名
     jobs:
       - build-test
       - deploy:
           requires: # buildが成功したら実行する
             - build-test
+          context:
+            - $HEROKU_API_KEY
+            - $HEROKU_APP_NAME
