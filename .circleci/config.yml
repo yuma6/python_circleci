@@ -34,6 +34,6 @@ workflows:
       - deploy:
           requires: # buildが成功したら実行する
             - build-test
-          context:
-            - $HEROKU_API_KEY
-            - $HEROKU_APP_NAME
+          # context:
+          #   - HEROKU_API_KEY
+          #   - HEROKU_APP_NAME
