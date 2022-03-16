@@ -30,6 +30,7 @@ workflows:
   version: 2.1
   test_and_deploy: # workflow名
     jobs:
+      - build-test
       - deploy:
           requires: # buildが成功したら実行する
             - build-test
