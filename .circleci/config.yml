@@ -12,8 +12,6 @@ jobs:
             echo "The command above installs Heroku, the command below deploys.
             What you do inbetween is up to you!"
       - heroku/deploy-via-git
-    requires: # buildが成功したら実行する
-      - build-test
   build-test:
     docker: # circleci上でのdockerによる実行環境の指定
       - image: cimg/python:3.10.2 # 自分の実行環境に合わせる cimgのpythonであればpipenvがインストール済み
